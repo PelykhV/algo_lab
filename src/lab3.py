@@ -1,14 +1,11 @@
-from typing import List
-
-
 class BinaryTree:
-    def __init__(self, value, left=None, right=None, parent=None):
+    def __init__(self, value, left=None, right=None):
         self.value = value
         self.left = left
         self.right = right
 
 
-def post_order_traversal(root: BinaryTree) -> List:
+def post_order_traversal(root: BinaryTree):
     if root is None:
         return []
 
@@ -23,14 +20,3 @@ def post_order_traversal(root: BinaryTree) -> List:
     result.append(root.value)
 
     return result
-
-
-root = BinaryTree(1)
-root.left = BinaryTree(2)
-root.right = BinaryTree(3)
-root.left.right = BinaryTree(5)
-root.right.left = BinaryTree(6)
-root.right.right = BinaryTree(7)
-
-result = post_order_traversal(root)
-print(result)
